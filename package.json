@@ -1,0 +1,20 @@
+{
+  "name": "nodejs_seneca_mongoose_poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "dotenv": "^7.0.0",
+    "lodash": "^4.17.5",
+    "mongoose": "^5.0.9",
+    "pino": "^4.13.0",
+    "seneca": "^3.4.3",
+    "seneca-amqp-transport": "^2.2.0"
+  }
+}
