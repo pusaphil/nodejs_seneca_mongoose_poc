@@ -79,5 +79,5 @@ Validations of `.env` file, and other validations. I tried to make it simple fro
     INFO [2019-03-21T10:38:29.023Z] (test/18430 on mylaptop): Closing Message broker.
     INFO [2019-03-21T10:38:29.024Z] (test/18430 on mylaptop): Message broker closed.
     ```
-    In the snipet above, notice the `^C` because I already intervine with the process. The rabbitMQ is already kill few seconds early but the script is still running. But when the `^C` process take place, the script recognized the command as a `SIGINT` signal and graceful exit takes place. But noticed that `exit` signal also 'queued' in the process but did not executed ASAP. Why?
+    In the snipet above, notice the `^C` because I already intervine with the process. The rabbitMQ is already kill few seconds early but the script is still running. But when the `^C` process take place, the script recognized the command as a `SIGINT` signal and graceful exit takes place. The `exit` signal is from the `gracefulExit` Promise block. The `exit` signal from the Seneca was never queued in the event loop. Why?
 
